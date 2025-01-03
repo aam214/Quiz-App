@@ -87,7 +87,22 @@ border-radius: 15px;
   width: 350px;
   background-color: rgba(75, 74, 74, 0.534);
   } 
+  .game-container{
+    padding: 50px;
+    color: white;
+    text-align: center;
+  }
+  .game-header{
+    font-size: 40px;
+    margin-top: -20px;
+  }
   li{
     list-style: none;
-
+    font-size: 40px;
+  }
+  .timer{
+   text-align: start;
+  }
+  .quiz-info{
+    text-align: end;
   }
