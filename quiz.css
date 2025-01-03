@@ -2,7 +2,7 @@ body{
   background: linear-gradient(90deg, rgb(3, 119, 235) 0%, rgb(197, 0, 204) 100%);
   background-repeat: no-repeat;
   height: 100vh;
- 
+  display: block;
 
   align-items: center;
 }
@@ -19,6 +19,7 @@ h1{
     font-size: 30px;
   }
   .container{
+   display: none;
     color: rgba(245, 247, 253, 0.815);
     max-width: 800px;
     font-family: "Roboto", serif;
@@ -31,7 +32,7 @@ h1{
     border-radius: 20px;
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
     padding: 50px;
-    display: block;
+ 
     margin-top: 20px;
   }
   .number-button, .category-button{
@@ -47,6 +48,18 @@ h1{
     width: 200px;
     font-size: 18px;
   }
+  .category-button.active{
+  background-color: #c500cc;
+  width: 250px;
+  color: white;
+  border: 3px solid white;
+  }
+  .number-button.active{
+    background-color: #c500cc;
+    width: 250px;
+    color: white;
+    border: 3px solid white;
+    }
   .number-button:hover, .category-button:hover{
   width: 250px;
   background-color: rgba(75, 74, 74, 0.534);
