@@ -96,13 +96,26 @@ border-radius: 15px;
     font-size: 40px;
     margin-top: -20px;
   }
-  li{
+  .quiz-choices{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+  }
+  .quiz-choice{
+    padding: 10px 12px;
+    border-radius:15px ;
+    background-color: #e2dee2;
+    cursor: pointer;
     list-style: none;
-    font-size: 40px;
+    border: 2px solid #c500cc;
+    font-size: 38px;
   }
   .timer{
-   text-align: start;
+   background-color: #00cc0a;
+   padding:10px 15px;
+   
   }
   .quiz-info{
     text-align: end;
   }
+  
