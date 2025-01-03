@@ -1,30 +1,68 @@
 body{
-  background: linear-gradient(to top, #79f0ae 0%, #eeeb8e 100%);
+  background: linear-gradient(90deg, rgb(3, 119, 235) 0%, rgb(197, 0, 204) 100%);
   background-repeat: no-repeat;
   height: 100vh;
-  color: white;
+ 
+
+  align-items: center;
 }
 h1{
     font-family: "Fontdiner Swanky", serif;
     font-weight: 400;
     margin-top: -20px;
     letter-spacing: 5px;
+    color: white;
     font-style: normal;
-    font-size: 70px;
+    font-size: 75px;
+  }
+  h3{
+    font-size: 30px;
   }
   .container{
+    color: rgba(245, 247, 253, 0.815);
     max-width: 800px;
     font-family: "Roboto", serif;
     font-weight: 400;
     font-style: normal;
-    letter-spacing: 2px;
+    letter-spacing: 1.15px;
     text-align: center;
     background-color: rgba(59, 59, 59, 0.452);
     margin: 0 auto;
     border-radius: 20px;
-    box-shadow: 10px 10px 18px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
     padding: 50px;
     display: block;
-    margin-top: 200px;
+    margin-top: 20px;
   }
-  
+  .number-button, .category-button{
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 15px;
+    border: 3px solid #c500cc;
+    align-items: center;
+    justify-content: center;
+    margin: 8px auto;
+    transition: 1s ease;
+    display: block;
+    width: 200px;
+    font-size: 18px;
+  }
+  .number-button:hover, .category-button:hover{
+  width: 250px;
+  background-color: rgba(75, 74, 74, 0.534);
+  } 
+.start-button{
+padding: 10px 30px;
+transition: 1s ease;
+margin-top: 50px;
+cursor: pointer;
+border: 3px solid #c500cc;
+width: 300px;
+font-size: 20px;
+box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+border-radius: 15px;
+}
+.start-button:hover{
+  width: 350px;
+  background-color: rgba(75, 74, 74, 0.534);
+  } 
