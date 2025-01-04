@@ -32,7 +32,7 @@
   <button class="number-button active">5</button>
   <button class="number-button">10</button>
 </div>
-<button class="start-button">Start Quiz<i class="fa-solid fa-flag-checkered"></i></button>
+<button class="start-button">Start</button>
 </div>
 <!--Game-->
 
@@ -41,11 +41,11 @@
 <div class="question">
 <h3 class="quiz-question">What year was the Boston Tea Party?</h3>
 <ul class="quiz-choices">
-  <li class="quiz-choice correct">1773</li>
-  <li class="quiz-choice wrong">1802</li>
+  <li class="quiz-choice correct"><i class="fa-regular fa-square-check"></i>1773</li>
+  <li class="quiz-choice wrong"><i class="fa-solid fa-square-xmark"></i>1802</li>
   <li class="quiz-choice">1905</li>
-  <li class="quiz-choice"><i class="fa-regular fa-square-check"></i> 1675</li>
-  <li class="quiz-choice"><i class="fa-solid fa-square-xmark"></i>1892</li>
+  <li class="quiz-choice">1675</li>
+  <li class="quiz-choice">1892</li>
 </ul>
 <i class="fa-solid fa-arrow-right"></i>
 </div>
@@ -55,6 +55,15 @@
 <p>Question: <b>2 of 10</b></p>
 </span>
 </div>
+</div>
+
+<div class="game-complete-container">
+  <h1>Trivia Complete</h1>
+  <div class="results">
+  <p class="result-answers">You answered <b> 9</b> of <b>10</b> correctly</p>
+  <h2 class="celebrate-emoji">🎉</h2>
+</div>
+
 </div>
 <script src="trivia.js"></script>
 </body>
