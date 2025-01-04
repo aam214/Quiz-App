@@ -10,13 +10,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
   <meta name="description" content="An interactive quiz application. Quiz your knowledge.">
-  <link rel="stylesheet" href="quiz.css">
+  <link rel="stylesheet" href="trivia.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz Me📖</title>
+  <title>Trivia📚</title>
 </head>
 <body>
 <div class="start-container">
-<h1 class="title">Quiz Games</h1>
+<h1 class="title">Trivia Games</h1>
 <div class="options-container">
 <h3 class="categories-title">Choose A Category</h3>
     <div class="option-buttons">
@@ -36,24 +36,26 @@
 </div>
 <!--Game-->
 <div class="game-container">
-<h2 class="game-header">History</h2>
+<h2 class="game-header">Trivia</h2>
 <div class="question">
 <h3 class="quiz-question">What year was the Boston Tea Party?</h3>
 <ul class="quiz-choices">
   <li class="quiz-choice">1802</li>
+  <li class="quiz-choice">1905</li>
   <li class="quiz-choice">1675</li>
+  <li class="quiz-choice">1892</li>
   <li class="quiz-choice">1773</li>
 </ul>
-<!--Button might be an a-->
 <button class="next-button"><i class="fa-solid fa-forward"></i></button>
+<!--Button might be an a-->
+<div class="quiz-info">
 <div class="timer">
 <p class="time-left"> <b>10s</b> <i class="fa-solid fa-clock"></i></p>
 </div>
-</div>
-<div class="quiz-info">
-<p>Question:<b>2 of 10</b></p>
+<p>Question: <b>2 of 10</b></p>
 </div>
 </div>
-<script src="quiz.js"></script>
+</div>
+<script src="trivia.js"></script>
 </body>
 </html>

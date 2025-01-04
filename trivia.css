@@ -39,7 +39,6 @@ h1{
     margin: 0 auto;
     max-width: 800px;
     font-family: "Roboto", serif;
-    color: rgba(245, 247, 253, 0.815);
     border-radius: 20px;
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
   }
@@ -90,6 +89,7 @@ border-radius: 15px;
   .game-container{
     padding: 50px;
     color: white;
+    margin-top: 50px;
     text-align: center;
   }
   .game-header{
@@ -98,24 +98,54 @@ border-radius: 15px;
   }
   .quiz-choices{
     display: flex;
+    color: black;
     gap: 10px;
     flex-direction: column;
   }
   .quiz-choice{
     padding: 10px 12px;
+    transition: 0.5s ease;
     border-radius:15px ;
-    background-color: #e2dee2;
+    background-color: #f8f4f8;
     cursor: pointer;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
     list-style: none;
     border: 2px solid #c500cc;
     font-size: 38px;
   }
+  .quiz-choice:hover{
+    opacity: 0.7;
+  }
+  .next-button{
+    padding: 10px 30px;
+    transition: 1s ease;
+    margin-top: 50px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: #02af0a;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    font-size: 20px;
+  }
+  .next-button:hover{
+    width: 350px;
+    background-color: #027408;
+    } 
   .timer{
-   background-color: #00cc0a;
-   padding:10px 15px;
-   
+   background-color:#c500cc;
+   padding:5px 10px;
+   font-size: 20px;
+   border-radius: 20px;
+   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+   float: left;
+  }
+  .quiz-info p{
+    text-align: end;
+    margin-top: 10px;
+    font-size: 20px;
   }
   .quiz-info{
-    text-align: end;
+    border-top: 1px solid white;
+    margin: 50px;
   }
-  
