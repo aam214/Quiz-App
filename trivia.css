@@ -60,6 +60,8 @@ h1{
   }
   .celebrate-emoji{
     font-size: 100px;
+    margin-top: -10px;
+    margin-bottom: -10px;
   }
   .number-button, .category-button{
     cursor: pointer;
@@ -90,18 +92,23 @@ h1{
   width: 250px;
   background-color: rgba(75, 74, 74, 0.534);
   } 
-.start-button{
+  .start-button{
+    font-size:50px;
+  }
+  .new-game-button{
+    font-size: 20px;
+  }
+.start-button, .new-game-button{
 padding: 10px 30px;
 transition: 1s ease;
 margin-top: 50px;
 cursor: pointer;
 border: 3px solid #c500cc;
 width: 300px;
-font-size: 30px;
 box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
 border-radius: 15px;
 }
-.start-button:hover{
+.start-button:hover, .new-game:hover{
   width: 350px;
   background-color: rgba(75, 74, 74, 0.534);
   } 
