@@ -104,13 +104,13 @@ transition: 1s ease;
 margin-top: 50px;
 cursor: pointer;
 border: 3px solid #c500cc;
-width: 300px;
+width: 210px;
 box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
 border-radius: 15px;
 }
-.start-button:hover, .new-game:hover{
-  width: 350px;
-  background-color: rgba(75, 74, 74, 0.534);
+.start-button:hover, .new-game-button:hover{
+  width: 250px;
+  background-color: rgba(141, 141, 141, 0.534);
   } 
   .game-container{
     padding: 50px;
