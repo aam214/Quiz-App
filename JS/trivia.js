@@ -1,7 +1,11 @@
-let quizSubject = "history";
+let triviaSubject = "history";
 
 const triviaQuestions = () => {
-  const subjectQuestions = questions.find(cat => cat.category === quizSubject)
-  console.log(subjectQuestions); 
+  const subjectQuestions = questions.find(cat => 
+  cat.category.toLowerCase() === triviaSubject.toLowerCase()).questions;
+
+
+  const randomQuestion = subjectQuestions[Math.floor(Math.random() * subjectQuestions.length)];
+  console.log(randomQuestion); 
 }
 triviaQuestions();

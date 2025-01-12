@@ -115,6 +115,7 @@ border-radius: 15px;
   .game-container{
     padding: 50px;
     color: white;
+    display: block;
     margin-top: 50px;
     text-align: center;
   }
