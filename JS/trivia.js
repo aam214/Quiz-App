@@ -1,5 +1,6 @@
 const quizQuestion = document.querySelector(".quiz-question");
 const quizChoices = document.querySelector(".quiz-choices");
+const nextQuestion = document.querySelector(".fa-solid fa-arrow-right");
 
 let triviaSubject = "history";
 
@@ -27,5 +28,6 @@ const showQuestion = () => {
   });
 
 }
-
 showQuestion();
+
+nextQuestion.addEventListener("click", showQuestion);
