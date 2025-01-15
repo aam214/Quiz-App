@@ -1,5 +1,5 @@
 const quizQuestion = document.querySelector(".quiz-question");
-const quizChoices = document.querySelectorAll(".quiz-choice");
+const quizChoices = document.querySelector(".quiz-choices");
 const nextQuestion = document.querySelector(".fa-solid.fa-arrow-right");
 
 let triviaSubject = "history";
@@ -13,17 +13,18 @@ const subjectQuestions = questions.find(cat =>
 cat.category.toLowerCase() === triviaSubject.toLowerCase()).questions
 || [];
 
-const randomQuestion = subjectQuestions[Math.floor(Math.random() * subjectQuestions.length)];
+const randomQuestion = 
+subjectQuestions[Math.floor(Math.random() * subjectQuestions.length)];
 return randomQuestion;
 }
 
 
 
 const userChoice = (option, answerIndex) => {
-  const isCorrect = questionNow.correctChoice ===
-  answerIndex;
-  option.classList.add(isCorrect ? 'correct' : 'wrong');
-quizChoices.forEach(option => option.style.pointerEvents = 'none')
+const isCorrect = questionNow.correctChoice === answerIndex;
+option.classList.add(isCorrect ? 'correct' : 'wrong');
+quizChoices.querySelectorAll('.quiz-choice').forEach(option => option.style.pointerEvents 
+= 'none');
 }
 
 
