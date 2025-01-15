@@ -1,5 +1,5 @@
 const quizQuestion = document.querySelector(".quiz-question");
-const quizChoices = document.querySelector(".quiz-choices");
+const quizChoices = document.querySelectorAll(".quiz-choice");
 const nextQuestion = document.querySelector(".fa-solid.fa-arrow-right");
 
 let triviaSubject = "history";
@@ -23,6 +23,7 @@ const userChoice = (option, answerIndex) => {
   const isCorrect = questionNow.correctChoice ===
   answerIndex;
   option.classList.add(isCorrect ? 'correct' : 'wrong');
+quizChoices.forEach(option => option.style.pointerEvents = 'none')
 }
 
 
