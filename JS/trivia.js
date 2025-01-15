@@ -20,7 +20,7 @@ return randomQuestion;
 
 
 
-const userChoice = (option, answerIndex) => {
+const handleInput = (option, answerIndex) => {
 const isCorrect = questionNow.correctChoice === answerIndex;
 option.classList.add(isCorrect ? 'correct' : 'wrong');
 quizChoices.querySelectorAll('.quiz-choice').forEach(option => option.style.pointerEvents 
@@ -42,7 +42,7 @@ const showQuestion = () => {
   quizChoices.appendChild(li);
 
   //Choose option
-  li.addEventListener("click", () => userChoice(li, index));
+  li.addEventListener("click", () => handleInput(li, index));
   });
   };
 showQuestion();
