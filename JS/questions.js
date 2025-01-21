@@ -1,4 +1,4 @@
-const questions = [
+const quizzes = [
 {category: "history",
 questions: [
   {

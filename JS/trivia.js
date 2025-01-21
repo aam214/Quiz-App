@@ -9,7 +9,7 @@ let questionNow = null;
 
 //Get question based off category chosen
 const randomTriviaQuestion = () => {
-const subjectQuestions = questions.find(cat => 
+const subjectQuestions = quizzes.find(cat => 
 cat.category.toLowerCase() === triviaSubject.toLowerCase()).questions
 || [];
 
@@ -19,16 +19,18 @@ return randomQuestion;
 }
 
 
-
+//Handle User Input
 const handleInput = (option, answerIndex) => {
 const isCorrect = questionNow.correctChoice === answerIndex;
 option.classList.add(isCorrect ? 'correct' : 'wrong');
+
+!isCorrect ? showCorrectAnswer() : "";
 quizChoices.querySelectorAll('.quiz-choice').forEach(option => option.style.pointerEvents 
 = 'none');
 }
 
 
-//Show question
+//Show question and append each
 const showQuestion = () => {
   questionNow = randomTriviaQuestion();
   if(!questionNow) return;
