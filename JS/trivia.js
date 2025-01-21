@@ -18,13 +18,29 @@ subjectQuestions[Math.floor(Math.random() * subjectQuestions.length)];
 return randomQuestion;
 }
 
+const showCorrectAnswer = () => {
+const markCorrection = quizChoices.querySelectorAll('.quiz-choice')
+[questionNow.correctChoice];
+markCorrection.classList.add("correct");
+const quizIcon = `<span class="material-symbols-outlined">
+check</span>`;
+markCorrection.insertAdjacentHTML("beforeend", quizIcon);
+}
+
 
 //Handle User Input
 const handleInput = (option, answerIndex) => {
 const isCorrect = questionNow.correctChoice === answerIndex;
 option.classList.add(isCorrect ? 'correct' : 'wrong');
-
+//If incorrect this will show the correct answer
 !isCorrect ? showCorrectAnswer() : "";
+
+//Icon based on right and wrong 
+const quizIcon = `<span class="material-symbols-outlined">
+${isCorrect? 'check' : 'close'}</span>`;
+option.insertAdjacentHTML("beforeend", quizIcon);
+
+//Disable multiple options selected
 quizChoices.querySelectorAll('.quiz-choice').forEach(option => option.style.pointerEvents 
 = 'none');
 }
@@ -36,14 +52,12 @@ const showQuestion = () => {
   if(!questionNow) return;
   quizChoices.innerHTML = '';
   quizQuestion.textContent = questionNow.question;
-
   questionNow.options.forEach((option, index) => {
+  
   const li = document.createElement("li");
   li.classList.add("quiz-choice");
   li.textContent = option;
   quizChoices.appendChild(li);
-
-  //Choose option
   li.addEventListener("click", () => handleInput(li, index));
   });
   };
