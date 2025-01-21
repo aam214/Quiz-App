@@ -43,6 +43,7 @@ option.insertAdjacentHTML("beforeend", quizIcon);
 //Disable multiple options selected
 quizChoices.querySelectorAll('.quiz-choice').forEach(option => option.style.pointerEvents 
 = 'none');
+nextQuestion.style.visibility = "visible";
 }
 
 
@@ -50,10 +51,12 @@ quizChoices.querySelectorAll('.quiz-choice').forEach(option => option.style.poin
 const showQuestion = () => {
   questionNow = randomTriviaQuestion();
   if(!questionNow) return;
+
   quizChoices.innerHTML = '';
+  nextQuestion.style.visibility = "hidden";
   quizQuestion.textContent = questionNow.question;
+
   questionNow.options.forEach((option, index) => {
-  
   const li = document.createElement("li");
   li.classList.add("quiz-choice");
   li.textContent = option;
