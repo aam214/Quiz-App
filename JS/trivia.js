@@ -3,8 +3,8 @@ const quizChoices = document.querySelector(".quiz-choices");
 const nextQuestion = document.querySelector(".fa-solid.fa-arrow-right");
 
 let triviaSubject = "history";
-
 let questionNow = null;
+const unusedQuestionHistory = [];
 
 
 //Get question based off category chosen
@@ -13,8 +13,13 @@ const subjectQuestions = quizzes.find(cat =>
 cat.category.toLowerCase() === triviaSubject.toLowerCase()).questions
 || [];
 
+//Filter out used questions
+const ununsedQuestion = 
+subjectQuestions.filter((_, index) => !unusedQuestionHistory.includes(index));
 const randomQuestion = 
-subjectQuestions[Math.floor(Math.random() * subjectQuestions.length)];
+ununsedQuestion[Math.floor(Math.random() * ununsedQuestion.length)];
+
+unusedQuestionHistory.push(subjectQuestions.indexOf(randomQuestion));
 return randomQuestion;
 }
 
