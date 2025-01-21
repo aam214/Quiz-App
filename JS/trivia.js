@@ -1,17 +1,45 @@
 const quizQuestion = document.querySelector(".quiz-question");
+const timerUI = document.querySelector(".timer");
 const quizChoices = document.querySelector(".quiz-choices");
 const nextQuestion = document.querySelector(".fa-solid.fa-arrow-right");
+const questionsLeft = document.querySelector(".questions-left");
 
 let triviaSubject = "history";
+let quizLength = 10;
 let questionNow = null;
 const unusedQuestionHistory = [];
+const quizTime = 5;
+let currentTIme = quizTime;
+let myTimer = null;
 
+//TImer Functions
+const restartTIme = () => {
+  clearInterval(myTimer);
+  currentTIme = quizTime;
+  timerUI.textContent = `${currentTIme}s`
+}
+
+const beginTime = () => {
+  myTimer = setInterval(() => {
+  currentTIme--;
+  timerUI.textContent = `${currentTIme}s`
+  if(currentTIme <= 0){
+    clearInterval(myTimer);
+  }
+  }, 1000);
+}
 
 //Get question based off category chosen
 const randomTriviaQuestion = () => {
 const subjectQuestions = quizzes.find(cat => 
 cat.category.toLowerCase() === triviaSubject.toLowerCase()).questions
 || [];
+
+if(unusedQuestionHistory.length >= Math.min(subjectQuestions.length, quizLength))
+{
+  return console.log("Complete!");
+}
+
 
 //Filter out used questions
 const ununsedQuestion = 
@@ -24,6 +52,7 @@ return randomQuestion;
 }
 
 const showCorrectAnswer = () => {
+clearInterval(myTimer);
 const markCorrection = quizChoices.querySelectorAll('.quiz-choice')
 [questionNow.correctChoice];
 markCorrection.classList.add("correct");
@@ -56,10 +85,15 @@ nextQuestion.style.visibility = "visible";
 const showQuestion = () => {
   questionNow = randomTriviaQuestion();
   if(!questionNow) return;
-
-  quizChoices.innerHTML = '';
-  nextQuestion.style.visibility = "hidden";
-  quizQuestion.textContent = questionNow.question;
+  
+  restartTIme();
+  beginTime();
+//Update UI
+quizChoices.innerHTML = '';
+nextQuestion.style.visibility = "hidden";
+quizQuestion.textContent = questionNow.question;
+questionsLeft.innerHTML = 
+`Question: <b>${unusedQuestionHistory.length} of ${quizLength}</b>`;
 
   questionNow.options.forEach((option, index) => {
   const li = document.createElement("li");
