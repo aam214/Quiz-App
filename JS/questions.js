@@ -52,7 +52,7 @@ options: ["Macedonia", "Judea", "Egypt","Iberia", "Persia"],
 correctChoice: 1,  
 },
 ]
-}
+},
 {category: "popculture",
   questions: [
     {
@@ -81,7 +81,7 @@ correctChoice: 1,
     correctChoice: 2,
   },
   {
-    question: "Which state is known for it's oranges?",
+    question: "Which state is known for its oranges?",
     options: ["California", "Kentucky", "Hawaii","Florida", "Nebraska"],
     correctChoice: 3,  
   },
