@@ -14,11 +14,17 @@ const unusedQuestionHistory = [];
 const quizTime = 5;
 let currentTIme = quizTime;
 let myTimer = null;
+let score = 0;
 
+//Quiz Completed Container
 const showCompleted = () => {
 gameContainer.style.display = "none";
 completedContainer.style.display = "block";
 
+const gameCompletedMessage = 
+`You answered <b>${score}</b> out of <b>${quizLength}</b> correctly`;
+
+document.querySelector(".quiz-score").innerHTML = gameCompletedMessage;
 }
 
 //TImer Functions
@@ -53,7 +59,6 @@ if(unusedQuestionHistory.length >= Math.min(subjectQuestions.length, quizLength)
   return showCompleted();
 }
 
-
 //Filter out used questions
 const ununsedQuestion = 
 subjectQuestions.filter((_, index) => !unusedQuestionHistory.includes(index));
@@ -64,6 +69,7 @@ unusedQuestionHistory.push(subjectQuestions.indexOf(randomQuestion));
 return randomQuestion;
 }
 
+//Show Correct with styling and icons
 const showCorrectAnswer = () => {
 clearInterval(myTimer);
 const markCorrection = quizChoices.querySelectorAll('.quiz-choice')
@@ -79,8 +85,8 @@ markCorrection.insertAdjacentHTML("beforeend", quizIcon);
 const handleInput = (option, answerIndex) => {
 const isCorrect = questionNow.correctChoice === answerIndex;
 option.classList.add(isCorrect ? 'correct' : 'wrong');
-//If incorrect this will show the correct answer
-!isCorrect ? showCorrectAnswer() : "";
+//If incorrect this will show the correct answer otherwise increase score
+!isCorrect ? showCorrectAnswer() : score++;
 
 //Icon based on right and wrong 
 const quizIcon = `<span class="material-symbols-outlined">
