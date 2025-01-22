@@ -44,6 +44,7 @@ h1{
   .game-complete-container{
     background-color: rgba(59, 59, 59, 0.452);
     margin: 0 auto;
+    display: none;
     max-width: 500px;
     text-align: center;
     color: white;

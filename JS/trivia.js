@@ -12,7 +12,7 @@ let quizLength = 10;
 let questionNow = null;
 const unusedQuestionHistory = [];
 const quizTime = 5;
-let currentTIme = quizTime;
+let currentTime = quizTime;
 let myTimer = null;
 let score = 0;
 
@@ -28,17 +28,17 @@ document.querySelector(".quiz-score").innerHTML = gameCompletedMessage;
 }
 
 //TImer Functions
-const restartTIme = () => {
+const restartTime = () => {
   clearInterval(myTimer);
-  currentTIme = quizTime;
-  timerUI.textContent = `${currentTIme}s`
+  currentTime = quizTime;
+  timerUI.textContent = `${currentTime}s`
 }
 
 const beginTime = () => {
   myTimer = setInterval(() => {
-  currentTIme--;
-  timerUI.textContent = `${currentTIme}s`
-  if(currentTIme <= 0){
+  currentTime--;
+  timerUI.textContent = `${currentTime}s`
+  if(currentTime <= 0){
     clearInterval(myTimer);
     showCorrectAnswer();
     quizChoices.querySelectorAll('.quiz-choice').forEach(option => option.style.pointerEvents 
@@ -105,7 +105,7 @@ const showQuestion = () => {
   questionNow = randomTriviaQuestion();
   if(!questionNow) return;
 
-  restartTIme();
+  restartTime();
   beginTime();
 //Update UI
 quizChoices.innerHTML = '';
