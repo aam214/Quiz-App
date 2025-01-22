@@ -5,7 +5,7 @@ body{
   display: block;
   align-items: center;
 }
-h1{
+h1, .game-header{
     font-family: "Fontdiner Swanky", serif;
     font-weight: 400;
     margin-top: -20px;
@@ -172,22 +172,28 @@ border-radius: 15px;
   }
   .fa-arrow-right:hover{
     opacity: 0.8;
+    color:#cf9ad180;
     transform: scale(1.2);
   }
   .timer{
-   background-color:#c500cc;
+   background-color:#c500ccd7;
    padding:15px;
-   align-items: baseline;
+  display: flex;
   color: white;
-  float: left;
-   font-size:400px;
-   border-radius: 20px;
+   font-size:20px;
+   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+   border-radius: 10px;
+  }
+  .fa-clock{
+    margin-left: 10px;
+    align-items: baseline;
+    margin-top: 2px;
   }
   .quiz-info p{
-    text-align: end;
-    margin-top: 10px;
     font-size: 20px;
   }
   .quiz-info{
-    margin: 50px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
   }

@@ -1,17 +1,19 @@
 const quizQuestion = document.querySelector(".quiz-question");
+const startContainer = document.querySelector(".start-container");
 const gameContainer = document.querySelector(".game-container");
 const timerUI = document.querySelector(".timer");
 const quizChoices = document.querySelector(".quiz-choices");
 const nextQuestion = document.querySelector(".fa-solid.fa-arrow-right");
 const questionsLeft = document.querySelector(".questions-left");
 const completedContainer = document.querySelector(".game-complete-container");
+const newGameButton = document.querySelector(".new-game-button");
 
 //State variables
 let triviaSubject = "history";
-let quizLength = 10;
+let quizLength = 3;
 let questionNow = null;
 const unusedQuestionHistory = [];
-const quizTime = 5;
+const quizTime = 10;
 let currentTime = quizTime;
 let myTimer = null;
 let score = 0;
@@ -37,7 +39,8 @@ const restartTime = () => {
 const beginTime = () => {
   myTimer = setInterval(() => {
   currentTime--;
-  timerUI.textContent = `${currentTime}s`
+  timerUI.innerHTML = 
+  `${currentTime}s <i class="fa-regular fa-clock"></i>`
   if(currentTime <= 0){
     clearInterval(myTimer);
     showCorrectAnswer();
@@ -121,7 +124,17 @@ questionsLeft.innerHTML =
   quizChoices.appendChild(li);
   li.addEventListener("click", () => handleInput(li, index));
   });
-  };
+}
+const newQuiz = () => {
+  restartTime();
+  score = 0;
+  unusedQuestionHistory.length = 0;
+  startContainer.style.display = "block";
+  completedContainer.style.display = "none";
+
+}
+
 showQuestion();
 
 nextQuestion.addEventListener("click", showQuestion);
+newGameButton.addEventListener("click", newQuiz);
