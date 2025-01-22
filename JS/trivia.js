@@ -1,4 +1,5 @@
 const quizQuestion = document.querySelector(".quiz-question");
+const startButton = document.querySelector(".start-button");
 const startContainer = document.querySelector(".start-container");
 const gameContainer = document.querySelector(".game-container");
 const timerUI = document.querySelector(".timer");
@@ -125,6 +126,13 @@ questionsLeft.innerHTML =
   li.addEventListener("click", () => handleInput(li, index));
   });
 }
+
+const beginQuiz = () => {
+  gameContainer.style.display = "block";
+  startContainer.style.display = "none";
+  
+showQuestion();
+}
 const newQuiz = () => {
   restartTime();
   score = 0;
@@ -134,7 +142,8 @@ const newQuiz = () => {
 
 }
 
-showQuestion();
 
+showQuestion();
+startButton.addEventListener("click", beginQuiz);
 nextQuestion.addEventListener("click", showQuestion);
 newGameButton.addEventListener("click", newQuiz);
