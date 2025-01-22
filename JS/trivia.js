@@ -1,9 +1,12 @@
 const quizQuestion = document.querySelector(".quiz-question");
+const gameContainer = document.querySelector(".game-container");
 const timerUI = document.querySelector(".timer");
 const quizChoices = document.querySelector(".quiz-choices");
 const nextQuestion = document.querySelector(".fa-solid.fa-arrow-right");
 const questionsLeft = document.querySelector(".questions-left");
+const completedContainer = document.querySelector(".game-complete-container");
 
+//State variables
 let triviaSubject = "history";
 let quizLength = 10;
 let questionNow = null;
@@ -11,6 +14,12 @@ const unusedQuestionHistory = [];
 const quizTime = 5;
 let currentTIme = quizTime;
 let myTimer = null;
+
+const showCompleted = () => {
+gameContainer.style.display = "none";
+completedContainer.style.display = "block";
+
+}
 
 //TImer Functions
 const restartTIme = () => {
@@ -25,6 +34,10 @@ const beginTime = () => {
   timerUI.textContent = `${currentTIme}s`
   if(currentTIme <= 0){
     clearInterval(myTimer);
+    showCorrectAnswer();
+    quizChoices.querySelectorAll('.quiz-choice').forEach(option => option.style.pointerEvents 
+      = 'none');
+      nextQuestion.style.visibility = "visible";
   }
   }, 1000);
 }
@@ -37,7 +50,7 @@ cat.category.toLowerCase() === triviaSubject.toLowerCase()).questions
 
 if(unusedQuestionHistory.length >= Math.min(subjectQuestions.length, quizLength))
 {
-  return console.log("Complete!");
+  return showCompleted();
 }
 
 
@@ -85,7 +98,7 @@ nextQuestion.style.visibility = "visible";
 const showQuestion = () => {
   questionNow = randomTriviaQuestion();
   if(!questionNow) return;
-  
+
   restartTIme();
   beginTime();
 //Update UI
